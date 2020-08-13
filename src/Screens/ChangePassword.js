@@ -11,7 +11,7 @@ export default function ChangePassword({ navigation }) {
     return (
         <ScrollView style={styles.blueContainer}>
             <View style={styles.blueContainer}>
-                <Image source={require('../img/polonortelogo.png')} style={styles.headerImage} />
+                <Image source={require('../img/polo-norte-logo.png')} style={styles.headerImage} />
                 <Text style={styles.headerText}>
                     Redefinir senha!
             </Text>

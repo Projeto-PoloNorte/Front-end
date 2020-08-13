@@ -19,7 +19,7 @@ export default function ForgotPassword({ navigation }) {
             scrollEnabled={false}
         >
             <View style={styles.imgContainer}>
-                <Image source={require('../img/polonortelogo.png')} style={styles.headerImage} />
+                <Image source={require('../img/polo-norte-logo.png')} style={styles.headerImage} />
             </View>
             <View style={styles.inputContainer}>
                 <TextBox
