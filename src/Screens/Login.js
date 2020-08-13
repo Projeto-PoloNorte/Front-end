@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler'
 import React from "react"
-import { View, Image, SafeAreaView } from "react-native"
+import { View, Image } from "react-native"
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
 import styles from '../styles/styles'
@@ -8,8 +8,6 @@ import styles from '../styles/styles'
 import TextBox from '../Components/TextBox'
 import MainButton from '../Components/MainButton'
 import TextButton from '../Components/TextButton'
-
-import logo from '../img/polonortelogo.png'
 
 export default function Login({ navigation }) {
 
@@ -21,7 +19,7 @@ export default function Login({ navigation }) {
             scrollEnabled={false}
         >
             <View style={styles.imgContainer}>
-                <Image source={logo} style={styles.headerImage} />
+             <Image source={require('../img/polo-norte-logo.png')} style={styles.headerImage}/>
             </View>
             <View style={styles.inputContainer}>
                 <TextBox
