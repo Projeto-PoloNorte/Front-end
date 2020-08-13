@@ -12,6 +12,7 @@ const styles = StyleSheet.create({
         alignItems: "center"
     },
     headerImage: {
+        flex: 1,
         width: 350,
     },
 

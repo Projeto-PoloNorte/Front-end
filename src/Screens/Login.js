@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler'
 import React from "react"
-import { View, Image } from "react-native"
+import { View, Image, SafeAreaView } from "react-native"
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
 import styles from '../styles/styles'
@@ -8,6 +8,7 @@ import styles from '../styles/styles'
 import TextBox from '../Components/TextBox'
 import MainButton from '../Components/MainButton'
 import TextButton from '../Components/TextButton'
+
 import logo from '../img/polonortelogo.png'
 
 export default function Login({ navigation }) {
