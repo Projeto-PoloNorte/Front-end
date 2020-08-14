@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler'
 import React, { useState } from "react"
-import { View, Image, AsyncStorage } from "react-native"
+import { View, Image, AsyncStorage, Alert } from "react-native"
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
 import styles from '../styles/styles'
