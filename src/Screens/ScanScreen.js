@@ -7,7 +7,7 @@ import MainButton from '../Components/MainButton'
 import getEquipament from '../api/getEquipament'
 import LargeTextButton from '../Components/LargeTextButton'
 
-export default function ScanScreen({ navigation }) {
+export default function ScanScreen({route, navigation }) {
     const [scannerVisible, setScannerVisibel] = useState(false)
     const [userToken, setUserToken] = useState('')
     const url = 'https://apipolonorte.herokuapp.com/equipments/40'
@@ -31,7 +31,7 @@ export default function ScanScreen({ navigation }) {
                 <View style={{ alignSelf: 'center', marginTop: 10 }}>
                     {scannerVisible
                         ? <QrCodeScan onPress={()=> setScannerVisibel(false) } token={userToken} callBack={(token)=>{
-                            navigation.navigate('details')
+                            navigation.navigate('details', {userToken})
                         }}/>
                         : <View>
                             <View style={{marginVertical: 100}}>
