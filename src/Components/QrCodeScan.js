@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Text, View, StyleSheet, Button } from 'react-native';
+import { Text, View, StyleSheet, Button, Alert } from 'react-native';
 import { BarCodeScanner } from 'expo-barcode-scanner';
+import styles from '../styles/styles';
+import TextButton from './TextButton';
+import getEquipament from '../api/getEquipament';
 
-export default function QrCodeScan({onReaded}) {
+export default function QrCodeScan({onPress, token, callBack}) {
   const [hasPermission, setHasPermission] = useState(null);
   const [scanned, setScanned] = useState(false);
+  const [url, setUrl] = useState('')
 
   useEffect(() => {
     (async () => {
@@ -15,15 +19,15 @@ export default function QrCodeScan({onReaded}) {
 
   const handleBarCodeScanned = ({ type, data }) => {
     setScanned(true);
-    onReaded={onReaded(data)}
-    
+    callBack(token)
+    console.log('oq está vindo', token, data)
+
   };
-  console.log('verificando permissão', scanned)
   if (hasPermission === null) {
-    return <Text>Requesting for camera permission</Text>;
+    return <Text>Requisitando acesso para a câmera</Text>;
   }
   if (hasPermission === false) {
-    return <Text>No access to camera</Text>;
+    return <Text>Não há permissão para uso da câmera</Text>;
   }
 
   return (
@@ -31,18 +35,22 @@ export default function QrCodeScan({onReaded}) {
       style={{
       padding: 50
       }}>
-          <Text>Scaner aqui</Text>
+          <Text style={styles.headerScannerText} >Posicione a Câmera no QrCode</Text>
       <BarCodeScanner
         onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
         style={ {
-            height: 500,
+            height: 300,
             width: 500,
             borderBottomWidth: 2,
             alignSelf: 'center'
           }}
       />
-
-      {scanned && <Button title={'Tap to Scan Again'} onPress={() => setScanned(false)} />}
+    <View style={{alignSelf: 'center'}}>
+      {scanned 
+        ? <TextButton title={'Clique aqui para scanear de novo'} onPress={() => setScanned(false)} />
+        : <TextButton title={'Voltar'} onPress={onPress} />
+      } 
+    </View>
     </View>
   );
 }

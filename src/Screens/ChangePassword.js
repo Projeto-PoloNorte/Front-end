@@ -16,14 +16,12 @@ export default function ChangePassword({ navigation }) {
                     Redefinir senha!
             </Text>
                 <View style={styles.inputContainer}>
-                    <TextBox placeholder={'CPF'} />
                     <TextBox placeholder={'Senha atual'} />
                     <TextBox placeholder={'Nova senha'} />
                     <TextBox placeholder={'Repetir nova senha'} />
                     <MainButton backgroundColor={'#4DB9C8'} title={'Redefinir'} textColor={'#001435'} />
-                    <LargeTextButton title={'Voltar'} textColor={'#C4C4C4'}/>
-                </View>
-                
+                    <LargeTextButton title={'Voltar'} textColor={'#C4C4C4'} onPress={()=> navigation.navigate('scan')}/>
+                </View>  
             </View>
         </ScrollView>
     )

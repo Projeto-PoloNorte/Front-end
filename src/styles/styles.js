@@ -6,14 +6,18 @@ const styles = StyleSheet.create({
         flex: 1
     },
 
+    mainContainer: {
+        flex: 1
+    },
+
     imgContainer: {
         flex: 1,
         justifyContent: 'center',
         alignItems: "center"
     },
     headerImage: {
-        flex: 1,
-        width: 350,
+        width: 360,
+        
     },
 
     inputContainer: {
@@ -24,6 +28,12 @@ const styles = StyleSheet.create({
 
     buttonContainer: {
         flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+
+    buttonScanContainer: {
+        marginTop: 100,
         justifyContent: 'center',
         alignItems: 'center',
     },
@@ -42,7 +52,54 @@ const styles = StyleSheet.create({
         color: '#C4C4C4',
         alignSelf: 'center',
         margin: 10
-    }
+    },
+
+    headerScannerText: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        color: '#001435',
+        alignSelf: 'center',
+        margin: 10
+    },
+
+    buttonScanContainer: {
+        marginVertical: 20
+    },
+    
+    largeTextBox: {
+        width: 300,
+        height: 100,
+        backgroundColor: "#C4C4C4",
+        borderRadius: 5,
+        padding: 10,
+        margin: 5
+    },
+    detailsContainer: {
+        marginVertical: 10,
+        padding: 30,
+    },
+    descriptionContainer: {
+        flexDirection: 'row',
+        marginVertical: 20
+    },
+    description: {
+        fontSize: 18,
+        fontWeight: 'bold',   
+        color: '#001435',
+        margin: 5
+    },
+
+    descriptionText: {
+        fontSize: 18,  
+        color: '#001435',
+        margin: 5,
+        marginLeft: 10
+    },
+    maintenanceContainer: {
+        marginLeft: 20,
+        marginTop: -40
+     },
+
 });
 
 export default styles
